@@ -21,3 +21,8 @@ Listens to the queue and writes update to the DB
 ## Rest
 
 Rest API for polling the DB
+
+## TODO
+
+* Create backpressure between reader and api - wait for response - then get next batch
+* Why is kafka taking 500ms?
