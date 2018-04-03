@@ -1,0 +1,22 @@
+
+syntax = "proto3";
+
+package asb.host.dblog.v1;
+
+import "google/protobuf/timestamp.proto";
+
+message KafkaTransaction {
+  Event data = 1;
+  google.protobuf.Timestamp utc_generated_time = 2;
+}
+
+message Event {
+    uint32 id = 1;
+    google.protobuf.Timestamp timestamp = 2;
+    uint32 account = 3;
+    string field1 = 4;
+    string field2 = 5;
+    string field3 = 6;
+    string field4 = 7;
+    string field5 = 8;
+}
