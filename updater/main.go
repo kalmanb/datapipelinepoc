@@ -37,8 +37,12 @@ func writeLine(f *os.File, i int) {
 }
 
 func getLog(i int) []byte {
-	s := fmt.Sprintf("%d;%d;%s;%s;%s;%s;%s\n", i, time.Now().UnixNano(), randString(fieldLen), randString(fieldLen), randString(fieldLen), randString(fieldLen), randString(fieldLen))
+	s := fmt.Sprintf("%d;%d;%d;%s;%s;%s;%s;%s\n", i, time.Now().UnixNano(), getId(), randString(fieldLen), randString(fieldLen), randString(fieldLen), randString(fieldLen), randString(fieldLen))
 	return []byte(s)
+}
+
+func getId() int {
+	return rand.Intn(1000000)
 }
 
 var chars = []rune("abcdefghijklmnopqrstuvwxyz")
