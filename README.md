@@ -1,3 +1,14 @@
+## Run
+
+```bash
+docker-compose up
+cd api
+go build && ./api &
+cd ../reader
+go build && ./reader &
+cd ../updater
+go build && ./updater
+
 ## Updater
 
 Appends rows to db.log
@@ -25,4 +36,4 @@ Rest API for polling the DB
 ## TODO
 
 * Create backpressure between reader and api - wait for response - then get next batch
-* Why is kafka taking 500ms?
+```
