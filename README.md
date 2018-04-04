@@ -10,6 +10,10 @@ cd ../updater
 go build && ./updater
 ```
 
+## Process
+
+updater -> db.log -> reader -> api -> kafka -> aggregator -> kafka -> service(subscribe) -> cassandra -> service(rest)
+
 ## Updater
 
 Appends rows to db.log
@@ -26,15 +30,19 @@ Uses:
 * protobufs
 * kafka
 
-## Subscriber
+## Aggregator
 
-Listens to the queue and writes update to the DB
+Enriches the data stream with aggregations
 
-## Rest
+## Service
 
-Rest API for polling the DB
+Subscribes to the queue and writes update to the DB
+Has a rest api to query the data
 
 ## TODO
 
 * Create backpressure between reader and api - wait for response - then get next batch
+
+```
+
 ```
