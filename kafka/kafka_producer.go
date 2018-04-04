@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"errors"
 	"strings"
-	"time"
 
 	"github.com/Shopify/sarama"
 	log "github.com/Sirupsen/logrus"
@@ -109,7 +108,7 @@ func SetupProducer(brokers string, serializer Serializer) (Producer, error) {
 	saramaConfig.Producer.Retry.Max = 10
 	saramaConfig.Producer.Return.Errors = true
 	saramaConfig.Producer.Return.Successes = true
-	saramaConfig.Producer.Flush.Frequency = 500 * time.Millisecond // Flush batches every 500ms
+	// saramaConfig.Producer.Flush.Frequency = 50 * time.Millisecond
 	saramaConfig.Producer.Partitioner = partitioner.NewMurmur2Partitioner
 
 	saramaProducer, err := sarama.NewSyncProducer(brokerList, saramaConfig)

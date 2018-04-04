@@ -9,6 +9,7 @@ import (
 
 // 5 fields
 var fieldLen = 10
+var sleepMax = 100 // millis
 
 func main() {
 	f, err := os.OpenFile("../db.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
@@ -19,7 +20,7 @@ func main() {
 
 	i := 0
 	for true {
-		d := time.Duration(10 * rand.Intn(10))
+		d := time.Duration(rand.Intn(sleepMax))
 		time.Sleep(d * time.Millisecond)
 		writeLine(f, i)
 		i++
