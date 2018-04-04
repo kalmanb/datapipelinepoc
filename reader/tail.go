@@ -23,7 +23,7 @@ func tail(f *os.File, processFn func([]string) error) {
 			// Assuming lines aren't too big
 			for line, prefix, err := r.ReadLine(); err != io.EOF && count < batchSize; line, prefix, err = r.ReadLine() {
 				if prefix {
-					panic("Line was too ling")
+					panic("Line was too long")
 				} else {
 					lines = append(lines, string(line))
 				}
