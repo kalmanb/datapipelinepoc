@@ -1,11 +1,11 @@
 package main
 
 import (
-	"asb/host/kafka"
 	"time"
 
 	proto "github.com/golang/protobuf/proto"
 	"github.com/golang/protobuf/ptypes"
+	"github.com/kalmanb/datapoc/kafka"
 )
 
 func topicName(topicInstance string) string {

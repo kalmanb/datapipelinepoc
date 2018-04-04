@@ -1,7 +1,6 @@
 package main
 
 import (
-	"asb/host/kafka"
 	"errors"
 	"fmt"
 	"net"
@@ -10,6 +9,7 @@ import (
 	"time"
 
 	"github.com/golang/protobuf/ptypes"
+	"github.com/kalmanb/datapoc/kafka"
 )
 
 func main() {
