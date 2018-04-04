@@ -1,20 +1,8 @@
-## Run
-
-```bash
-docker-compose up
-cd api
-go build && ./api &
-cd ../reader
-go build && ./reader &
-cd ../updater
-go build && ./updater
-```
-
 ## Process
 
-updater -> db.log -> reader -> api -> kafka -> aggregator -> kafka -> service(subscribe) -> cassandra -> service(rest)
+dblogger -> db.log -> reader -> api -> kafka -> aggregator -> kafka -> service(subscribe) -> cassandra -> service(rest)
 
-## Updater
+## DBLogger
 
 Appends rows to db.log
 
@@ -39,10 +27,18 @@ Enriches the data stream with aggregations
 Subscribes to the queue and writes update to the DB
 Has a rest api to query the data
 
+## Run
+
+```bash
+docker-compose up
+cd api
+go build && ./api &
+cd ../reader
+go build && ./reader &
+cd ../dblogger
+go build && ./dblogger
+```
+
 ## TODO
 
 * Create backpressure between reader and api - wait for response - then get next batch
-
-```
-
-```
