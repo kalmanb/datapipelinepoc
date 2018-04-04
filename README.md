@@ -8,6 +8,7 @@ cd ../reader
 go build && ./reader &
 cd ../updater
 go build && ./updater
+```
 
 ## Updater
 
