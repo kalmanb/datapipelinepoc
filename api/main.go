@@ -69,15 +69,20 @@ func marshallEvent(line string) (Event, error) {
 	if err != nil {
 		return Event{}, nil
 	}
-
 	account, err := strconv.ParseUint(splits[2], 10, 32)
 	if err != nil {
 		return Event{}, nil
 	}
+	amount, err := strconv.ParseInt(splits[3], 10, 64)
+	if err != nil {
+		return Event{}, nil
+	}
+
 	return Event{
 		Id:        uint32(id),
 		Timestamp: timestamp,
 		Account:   uint32(account),
+		Amount:    int64(amount),
 		Field1:    splits[3],
 		Field2:    splits[4],
 		Field3:    splits[5],

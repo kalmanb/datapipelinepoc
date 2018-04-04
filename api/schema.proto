@@ -14,9 +14,10 @@ message Event {
     uint32 id = 1;
     google.protobuf.Timestamp timestamp = 2;
     uint32 account = 3;
-    string field1 = 4;
-    string field2 = 5;
-    string field3 = 6;
-    string field4 = 7;
-    string field5 = 8;
+    int64 amount = 4;
+    string field1 = 5;
+    string field2 = 6;
+    string field3 = 7;
+    string field4 = 8;
+    string field5 = 9;
 }

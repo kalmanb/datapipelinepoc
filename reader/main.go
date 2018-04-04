@@ -78,20 +78,25 @@ func unmarshall(line string) (Event, error) {
 	if err != nil {
 		return Event{}, nil
 	}
+	amount, err := strconv.ParseInt(splits[3], 10, 64)
+	if err != nil {
+		return Event{}, nil
+	}
 	return Event{
 		id:        uint32(id),
 		timestamp: timestamp,
 		account:   uint32(account),
-		field1:    splits[3],
-		field2:    splits[4],
-		field3:    splits[5],
-		field4:    splits[6],
-		field5:    splits[7],
+		amount:    int64(amount),
+		field1:    splits[4],
+		field2:    splits[5],
+		field3:    splits[6],
+		field4:    splits[7],
+		field5:    splits[8],
 	}, nil
 }
 
 func marshall(e Event) []byte {
-	s := fmt.Sprintf("%d;%d;%d;%s;%s;%s;%s;%s", e.id, e.timestamp, e.account, e.field1, e.field2, e.field3, e.field4, e.field5)
+	s := fmt.Sprintf("%d;%d;%d;%d;%s;%s;%s;%s;%s", e.id, e.timestamp, e.account, e.amount, e.field1, e.field2, e.field3, e.field4, e.field5)
 	return []byte(s)
 }
 
@@ -99,6 +104,7 @@ type Event struct {
 	id        uint32
 	timestamp uint64
 	account   uint32
+	amount    int64
 	field1    string
 	field2    string
 	field3    string
