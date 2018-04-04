@@ -14,3 +14,10 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /tmp/kafka-temp:/kafka
+  cassandra:
+      image: cassandra:3.11.2
+      ports:
+        - "9042:9042"
+      volumes:
+        - /tmp/cassandra-tmp:/var/lib/cassandra
+

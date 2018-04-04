@@ -83,10 +83,10 @@ func marshallEvent(line string) (Event, error) {
 		Timestamp: timestamp,
 		Account:   uint32(account),
 		Amount:    int64(amount),
-		Field1:    splits[3],
-		Field2:    splits[4],
-		Field3:    splits[5],
-		Field4:    splits[6],
-		Field5:    splits[7],
+		Field1:    splits[4],
+		Field2:    splits[5],
+		Field3:    splits[6],
+		Field4:    splits[7],
+		Field5:    splits[8],
 	}, nil
 }

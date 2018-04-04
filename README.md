@@ -41,4 +41,10 @@ go build && ./dblogger
 
 ## TODO
 
+* service subscription
+* service http
+* Report end to end
 * Create backpressure between reader and api - wait for response - then get next batch
+* Add aggregation
+* Handle high load
+* Handle reconnects
