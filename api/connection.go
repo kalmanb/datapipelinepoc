@@ -9,7 +9,7 @@ import (
 
 func handleConnection(conn net.Conn) {
 	fmt.Printf("Connection Opened\n")
-	producer := getProducer("localhost:9092", "host_events")
+	producer := getProducer("127.0.0.1:9092", "host_events")
 	b := make([]byte, 1)
 	eol := false
 	for {
