@@ -6,9 +6,9 @@ import (
 	"time"
 
 	"github.com/Shopify/sarama"
-	log "github.com/Sirupsen/logrus"
 	cluster "github.com/bsm/sarama-cluster"
 	"github.com/rcrowley/go-metrics"
+	log "github.com/sirupsen/logrus"
 )
 
 const OffsetOldest = sarama.OffsetOldest

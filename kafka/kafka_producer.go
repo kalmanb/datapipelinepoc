@@ -6,8 +6,8 @@ import (
 	"strings"
 
 	"github.com/Shopify/sarama"
-	log "github.com/Sirupsen/logrus"
 	"github.com/movio/go-kafka/partitioner"
+	log "github.com/sirupsen/logrus"
 )
 
 // ProducerMessage is to be implemented by all messages to be send through this library

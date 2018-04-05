@@ -25,10 +25,6 @@
   version = "1.16.0"
 
 [[constraint]]
-  name = "github.com/Sirupsen/logrus"
-  version = "1.0.5"
-
-[[constraint]]
   name = "github.com/bsm/sarama-cluster"
   version = "2.1.13"
 
@@ -39,6 +35,10 @@
 [[constraint]]
   branch = "master"
   name = "github.com/rcrowley/go-metrics"
+
+[[constraint]]
+  name = "github.com/sirupsen/logrus"
+  version = "1.0.5"
 
 [[constraint]]
   name = "github.com/stretchr/testify"
