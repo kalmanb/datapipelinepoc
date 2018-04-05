@@ -18,8 +18,29 @@
 # [[override]]
 #  name = "github.com/x/y"
 #  version = "2.4.0"
+#
 
+[[constraint]]
+  branch = "master"
+  name = "github.com/gocql/gocql"
+
+[[constraint]]
+  name = "github.com/golang/protobuf"
+  version = "1.0.0"
+
+[[constraint]]
+  name = "github.com/gorilla/mux"
+  version = "1.6.1"
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/kalmanb/datapipelinepoc"
+
+[[constraint]]
+  name = "github.com/pkg/errors"
+  version = "0.8.0"
 
 [[constraint]]
   name = "github.com/sirupsen/logrus"
   version = "1.0.5"
+
