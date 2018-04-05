@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/golang/protobuf/ptypes"
-	"github.com/kalmanb/datapoc/kafka"
+	"github.com/kalmanb/datapipelinepoc/kafka"
 )
 
 func main() {

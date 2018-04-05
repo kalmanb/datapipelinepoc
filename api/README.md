@@ -4,6 +4,6 @@
 
 ```bash
 go get -u github.com/golang/protobuf/protoc-gen-go
-cd .../go/src/github.com/kalmanb/datapoc/api
+cd .../go/src/github.com/kalmanb/datapipelinepoc/api
 protoc -I=. --go_out=. *.proto
 ```

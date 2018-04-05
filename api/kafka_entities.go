@@ -5,7 +5,7 @@ import (
 
 	proto "github.com/golang/protobuf/proto"
 	"github.com/golang/protobuf/ptypes"
-	"github.com/kalmanb/datapoc/kafka"
+	"github.com/kalmanb/datapipelinepoc/kafka"
 )
 
 func topicName(topicInstance string) string {
