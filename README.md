@@ -1,6 +1,6 @@
 ## Process
 
-dblogger -> db.log -> reader -> api -> kafka -> aggregator -> kafka -> service(subscribe) -> cassandra -> service(rest)
+dblogger -> db.log -> reader -> api -> kafka -> aggregator -> kafka -> subscribe -> cassandra -> rest
 
 ## DBLogger
 
@@ -22,9 +22,12 @@ Uses:
 
 Enriches the data stream with aggregations
 
-## Service
+## Subscriber
 
 Subscribes to the queue and writes update to the DB
+
+## rest
+
 Has a rest api to query the data
 
 ## Run
