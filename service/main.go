@@ -1,13 +1,12 @@
 package main
 
 import (
-	"fmt"
 	"strconv"
 	"time"
 
 	"github.com/gocql/gocql"
 	"github.com/golang/protobuf/proto"
-	"github.com/kalmanb/datapoc/kafka"
+	"github.com/kalmanb/datapipelinepoc/kafka"
 	"github.com/pkg/errors"
 	log "github.com/sirupsen/logrus"
 )
@@ -31,9 +30,7 @@ func main() {
 	}
 	defer cql.Close()
 
-	fmt.Println("Service Started")
-
-	consumeKafkaQ(consumer, cql)
+	go consumeKafkaQ(consumer, cql)
 }
 
 func processBatch(msgs []*kafka.ConsumerMessage, cql *gocql.Session) error {

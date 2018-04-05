@@ -1,6 +1,6 @@
 
 // Connect
-// docker exec -ti datapoc_cassandra_1 bash
+// docker exec -ti datapipelinepoc_cassandra_1 bash
 
 create keyspace events with replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
 
@@ -23,5 +23,5 @@ select * from events;
 
 
 // Reset Kafka Offsets
-docker exec -ti datapoc_kafka_1 bash
+docker exec -ti datapipelinepoc_kafka_1 bash
 bash-4.4# kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group service_sub --reset-offsets --to-earliest --all-topics --execute
