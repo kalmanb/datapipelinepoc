@@ -1,6 +1,6 @@
 ## Process
 
-dblogger -> db.log -> reader -> api -> kafka -> aggregator -> kafka -> subscribe -> cassandra -> rest
+_dblogger_ -> db.log -> _reader_ -> _api_ -> kafka -> _aggregator_ -> kafka -> _subscribe_ -> cassandra -> _rest_
 
 ## DBLogger
 
